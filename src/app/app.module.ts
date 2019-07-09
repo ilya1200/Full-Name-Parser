@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullNameComponent } from './full-name/full-name.component';
+import { ParserComponent } from './parser/parser.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullNameComponent
+    FullNameComponent,
+    ParserComponent
   ],
   imports: [
     BrowserModule,

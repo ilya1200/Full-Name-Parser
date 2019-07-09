@@ -1,0 +1,30 @@
+$min-width:575px;
+
+.parser-card{
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2.5rem;
+}
+
+.parser-card-body{
+    @media (min-width:$min-width) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div{
+        @media (min-width:$min-width) {
+            flex-grow: 8;
+            flex-basis: 80%;
+            margin-bottom: 0;
+        }
+    }
+
+    button{
+        @media (min-width:$min-width) {
+            flex-grow: 2;
+            flex-basis: 20%;
+            margin-left: 3em;
+        }
+    }
+}
