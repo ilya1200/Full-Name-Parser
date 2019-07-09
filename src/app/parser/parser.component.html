@@ -1,13 +1,18 @@
 <div class="card parser-card">
   <h5 class="card-header">Parser</h5>
   <div class="card-body">
-    <form class="parser-card-body">
+
+    <div *ngIf="fName.invalid && fName.touched" class="alert alert-danger mt-1" role="alert">
+      <strong>Error!</strong> A full name should follow the pattern — check it out!
+    </div>
+
+    <form #form="ngForm" (submit)="submitForm(form)" autocomplete="off" novalidate class="parser-card-body" [class.error]="fName.invalid && fName.touched">
       <div class="form-group">
         <label for="fullName">Enter your full name:</label>
-        <input type="text" class="form-control" id="fullName" placeholder="full name">
+        <input type="text" #fName="ngModel" [(ngModel)]="fullName" required class="form-control" id="fullName"
+          name="fullName" placeholder="full name">
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+      <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
     </form>
   </div>
 </div>
-
