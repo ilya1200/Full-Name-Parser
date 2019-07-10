@@ -5,5 +5,5 @@ export class FullName {
     public lastName: string;
     public suffix: string;
 
-    constructor() {}
+    constructor() { }
 }

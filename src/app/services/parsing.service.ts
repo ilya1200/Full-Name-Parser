@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FullName } from '../classes/full-name';
 import { FirstNameFirst,LastNameFirst, Patterns } from 'src/app/classes/patterns.enum';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,7 @@ export class ParsingService {
     this.fullNameParsed = new FullName();
 
     if(splitedName[current].indexOf(".") >= 0) {
+      this.fullNameParsed.prefix=splitedName[current];
       current++;
     }
     if(fullName.match("^" + this.patterns[0] + "$")){

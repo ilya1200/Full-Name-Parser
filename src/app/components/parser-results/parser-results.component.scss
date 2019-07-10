@@ -1,7 +1,7 @@
 $medium-screen:575px;
 $large-screen: 900px;
 
-$medium-screen-card: 35%;
+$medium-screen-card: 40%;
 $large-screen-card: 30%;
 
 .parser-result-header{
@@ -10,9 +10,10 @@ $large-screen-card: 30%;
     border-bottom: 14px solid rgba(0,0,0,.1);
 }
 
-.info{
-    padding-left:1.1em;
-    padding-right:1.1em; 
+.crd-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .result-row{

@@ -7,7 +7,7 @@
       <strong>Error!</strong> A full name should follow the pattern — check it out!
     </div>
 
-    <form #form="ngForm" (submit)="submitForm(form)" autocomplete="off" novalidate class="parser-card-body" [class.error]="fName.invalid && fName.touched">
+    <form #form="ngForm" (submit)="submitForm(form)" autocomplete="on" novalidate class="parser-card-body" [class.error]="fName.invalid && fName.touched">
       <div class="form-group">
         <label for="fullName">Enter your full name:</label>
         <input type="text" #fName="ngModel" [(ngModel)]="fullName" [pattern]="inputPattern" required class="form-control" id="fullName"
@@ -18,4 +18,4 @@
   </div>
 </div>
 
-<app-parser-results></app-parser-results>
+<app-parser-results [parsedNames]="parsedResults" (deleteClicked)='onDeleteClicked($event)'></app-parser-results>

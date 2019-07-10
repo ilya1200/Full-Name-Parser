@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FullName } from 'src/app/classes/full-name';
+
 
 @Component({
   selector: 'app-parser-results',
@@ -7,32 +8,16 @@ import { FullName } from 'src/app/classes/full-name';
   styleUrls: ['./parser-results.component.scss']
 })
 export class ParserResultsComponent implements OnInit {
-  parsedNames:FullName[]=[];
+  @Input() parsedNames:FullName[]=[];
+  @Output() deleteClicked: EventEmitter<FullName>=new EventEmitter<FullName>();
   
   constructor() { }
 
   ngOnInit() {
-    const example:FullName= new FullName();
-    example.firstName="George";
-    example.middleName="W.";
-    example.lastName="Bush";
-    this.parsedNames.push(example);
+  }
 
-    const example2:FullName= new FullName();
-    example2.prefix="Ms.";
-    example2.firstName="Jane";
-    example2.middleName="A.";
-    example2.lastName="Doe";
-
-    this.parsedNames.push(example2);
-    this.parsedNames.push(example);
-    this.parsedNames.push(example2);
-    this.parsedNames.push(example2);
-    this.parsedNames.push(example);
-    this.parsedNames.push(example2);
-    this.parsedNames.push(example2);
-    this.parsedNames.push(example);
-    this.parsedNames.push(example2);
+  delete(nameIdToBeDeleted:FullName){
+    this.deleteClicked.emit(nameIdToBeDeleted);
   }
 
 }
