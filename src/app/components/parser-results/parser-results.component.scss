@@ -5,7 +5,9 @@ $medium-screen-card: 35%;
 $large-screen-card: 30%;
 
 .parser-result-header{
-    text-align: center
+    text-align: center;
+    border: 0;
+    border-bottom: 14px solid rgba(0,0,0,.1);
 }
 
 .info{
