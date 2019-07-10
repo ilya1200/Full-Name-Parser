@@ -1,0 +1,37 @@
+$medium-screen:575px;
+$large-screen: 900px;
+
+$medium-screen-card: 35%;
+$large-screen-card: 30%;
+
+.parser-result-header{
+    text-align: center
+}
+
+.info{
+    padding-left:1.1em;
+    padding-right:1.1em; 
+}
+
+.result-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.result-card{
+    flex-grow: 1;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
+
+    @media (min-width:$medium-screen) {
+        flex-basis: $medium-screen-card;
+        max-width: $medium-screen-card;
+    }
+
+    @media (min-width:$large-screen) {
+        flex-basis: $large-screen-card;
+        max-width: $large-screen-card;
+    }
+}

@@ -1,4 +1,4 @@
-$min-width:575px;
+$medium-screen:575px;
 
 .parser-card{
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.3);
@@ -6,14 +6,14 @@ $min-width:575px;
 }
 
 .parser-card-body{
-    @media (min-width:$min-width) {
+    @media (min-width:$medium-screen) {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
     div{
-        @media (min-width:$min-width) {
+        @media (min-width:$medium-screen) {
             flex-grow: 8;
             flex-basis: 80%;
             margin-bottom: 0;
@@ -21,7 +21,7 @@ $min-width:575px;
     }
 
     button{
-        @media (min-width:$min-width) {
+        @media (min-width:$medium-screen) {
             flex-grow: 2;
             flex-basis: 20%;
             margin-left: 3em;

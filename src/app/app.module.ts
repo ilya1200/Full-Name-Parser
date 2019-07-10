@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FullNameComponent } from './full-name/full-name.component';
 import { ParserComponent } from './components/parser/parser.component';
 import { ParserResultsComponent } from './components/parser-results/parser-results.component';
 import { RouterModule } from '@angular/router';
@@ -13,7 +12,6 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
-    FullNameComponent,
     ParserComponent,
     ParserResultsComponent
   ],

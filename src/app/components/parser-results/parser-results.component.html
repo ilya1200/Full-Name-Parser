@@ -1,82 +1,53 @@
-<div class="card-deck">
-  <div *ngFor="let name of parsedNames">
-    <div class="card-header">
-      Parsered Name
-    </div>
+<div class="jumbotron jumbotron-fluid">
 
-    <div class="card-body">
-        <div class="info">
-          <dl class="row">
-            <dt class="col-sm-5">Prefix</dt>
-            <dd class="col-sm-6">Mr</dd>
-          </dl>
-  
-          <dl class="row">
-            <dt class="col-sm-5">First name</dt>
-            <dd class="col-sm-6">Jane</dd>
-          </dl>
-  
-          <dl class="row">
-            <dt class="col-sm-5">Middle name</dt>
-            <dd class="col-sm-6">Ann</dd>
-          </dl>
-  
-          <dl class="row">
-            <dt class="col-sm-5">Last name</dt>
-            <dd class="col-sm-6">Doe</dd>
-          </dl>
-  
-          <dl class="row">
-            <dt class="col-sm-5">Sufix</dt>
-            <dd class="col-sm-6">PhD</dd>
-          </dl>
+  <h1 class="display-4 p-1 mb-1 parser-result-header">Parser Results</h1>
+  <hr class="my-4">
+
+  <div class="container">
+    <div class="card-deck p-1">
+      <div class="result-row">
+        <div class="card mb-3 result-card" *ngFor="let name of parsedNames">
+          <div class="card-header">
+            Parsed Name
+          </div>
+
+          <div class="card-body">
+            <div class="info">
+              <dl class="row">
+                <dt class="col-sm-6">Prefix</dt>
+                <dd class="col-sm-6">{{name.prefix}}</dd>
+              </dl>
+
+              <dl class="row">
+                <dt class="col-sm-6">First name</dt>
+                <dd class="col-sm-6">{{name.firstName}}</dd>
+              </dl>
+
+              <dl class="row">
+                <dt class="col-sm-6">Middle name</dt>
+                <dd class="col-sm-6">{{name.middleName}}</dd>
+              </dl>
+
+              <dl class="row">
+                <dt class="col-sm-6">Last name</dt>
+                <dd class="col-sm-6">{{name.lastName}}</dd>
+              </dl>
+
+              <dl class="row">
+                <dt class="col-sm-6">Sufix</dt>
+                <dd class="col-sm-6">{{name.suffix}}</dd>
+              </dl>
+            </div>
+
+
+            <button type="button" class="btn btn-outline-dark btn-lg btn-block">Delete</button>
+          </div>
+
         </div>
-  
-  
-        <button type="button" class="btn btn-outline-dark btn-lg btn-block">Delete</button>
+        <!--card-->
       </div>
-
-  </div>
-
-  <!--Hard Coded-->
-  <div class="card">
-    <div class="card-header">
-      Parsered Name
+      <!--row-->
     </div>
-
-    <div class="card-body">
-      <div class="info">
-        <dl class="row">
-          <dt class="col-sm-5">Prefix</dt>
-          <dd class="col-sm-6">Mr</dd>
-        </dl>
-
-        <dl class="row">
-          <dt class="col-sm-5">First name</dt>
-          <dd class="col-sm-6">Jane</dd>
-        </dl>
-
-        <dl class="row">
-          <dt class="col-sm-5">Middle name</dt>
-          <dd class="col-sm-6">Ann</dd>
-        </dl>
-
-        <dl class="row">
-          <dt class="col-sm-5">Last name</dt>
-          <dd class="col-sm-6">Doe</dd>
-        </dl>
-
-        <dl class="row">
-          <dt class="col-sm-5">Sufix</dt>
-          <dd class="col-sm-6">PhD</dd>
-        </dl>
-      </div>
-
-
-      <button type="button" class="btn btn-outline-dark btn-lg btn-block">Delete</button>
-    </div>
-
-
+    <!--card-deck-->
   </div>
-
 </div>
