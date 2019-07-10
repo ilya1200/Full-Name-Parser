@@ -20,6 +20,8 @@ export class ParserComponent implements OnInit {
   successfulSubmit:boolean;
   
   constructor(private parsing:ParsingService) { 
+    this.resolveParsing = this.resolveParsing.bind(this);
+    this.errorHandler = this.errorHandler.bind(this);
   }
 
   ngOnInit() {
@@ -35,16 +37,21 @@ export class ParserComponent implements OnInit {
     }
 
     this.fullName=form.value.fullName;
-    this.fullNameParsed=this.parsing.parseFullName(this.fullName);
-    this.fullName="";
+    this.parsing.parseFullName(this.fullName).then(this.resolveParsing,this.errorHandler);
+    form.resetForm();
+  }
+
+  private resolveParsing(fullNameParsed:FullName):void{
+    this.fullNameParsed=fullNameParsed;
     this.parsedResults.push(this.fullNameParsed);
+  }
+
+  private errorHandler(err:string):void{
+    console.log(err);
   }
 
   onDeleteClicked(nameIdToBeDeleted:FullName){
     this.parsedResults.splice(this.parsedResults.indexOf(nameIdToBeDeleted),1);
   }
 
-  // onReturn():void{
-
-  // }
 }
