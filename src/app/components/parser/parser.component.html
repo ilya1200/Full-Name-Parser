@@ -1,3 +1,4 @@
+
 <div class="card parser-card">
   <h5 class="card-header">Parser</h5>
   <div class="card-body">
@@ -9,7 +10,7 @@
     <form #form="ngForm" (submit)="submitForm(form)" autocomplete="off" novalidate class="parser-card-body" [class.error]="fName.invalid && fName.touched">
       <div class="form-group">
         <label for="fullName">Enter your full name:</label>
-        <input type="text" #fName="ngModel" [(ngModel)]="fullName" required class="form-control" id="fullName"
+        <input type="text" #fName="ngModel" [(ngModel)]="fullName" [pattern]="inputPattern" required class="form-control" id="fullName"
           name="fullName" placeholder="full name">
       </div>
       <button [disabled]="form.invalid" type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

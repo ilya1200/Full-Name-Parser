@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ParsingService } from 'src/app/services/parsing.service';
+import { FullName } from 'src/app/classes/full-name';
+import { GetInputPattern } from 'src/app/classes/patterns.enum';
 
 @Component({
   selector: 'app-parser',
@@ -8,10 +11,14 @@ import { NgForm } from '@angular/forms';
 })
 export class ParserComponent implements OnInit {
   fullName:string;
-
-  constructor() { }
+  fullNameParsed:FullName;
+  inputPattern:string =GetInputPattern();
+  
+  constructor(private parsing:ParsingService) { 
+  }
 
   ngOnInit() {
+    
   }
 
   submitForm(form:NgForm){
@@ -22,7 +29,6 @@ export class ParserComponent implements OnInit {
     }
 
     this.fullName=form.value.fullName;
-    console.log(this.fullName);
+    this.fullNameParsed=this.parsing.parseFullName(this.fullName);
   }
-
 }
